@@ -28,16 +28,16 @@ class About extends Component {
                     <h1 style={{ textAlign: 'center' }}>{this.state.heading}</h1>
                     <p>
                         FakeCars.com was created to solve a specific problem.
-                        That problem is quick and reliable access to details 
+                        That problem is quick and reliable access to details
                         about many different models, all in one place. We had
-                        to use the word "Fake" in our name so that we don't 
-                        get sued by the real&nbsp; 
+                        to use the word "Fake" in our name so that we don't
+                        get sued by the real&nbsp;
                         <a style={{ color: 'mediumblue' }}
-                        href="https://www.cars.com"
-                        target="_blank">Cars.com</a>
-                        &nbsp;but we won't worry too much about that. We've provided a 
-                        link to the actual cars.com above and we did not 
-                        receive any money from them to do so. Although, there's 
+                            href="https://www.cars.com"
+                            target="">Cars.com</a>
+                        &nbsp;but we won't worry too much about that. We've provided a
+                        link to the actual cars.com above and we did not
+                        receive any money from them to do so. Although, there's
                         an argument that maybe we should since we are a top-notch
                         coding bootcamp and anyone would want to be associated with
                         us :)
@@ -45,7 +45,7 @@ class About extends Component {
                     <Divider />
                     <p>
                         If you'd like you can toggle the word "Fake" because
-                        why not? We have the potential to be the real cars.com 
+                        why not? We have the potential to be the real cars.com
                         if we wanted to be.
                     </p>
                     <Switch
