@@ -1,21 +1,38 @@
 import React from 'react'
-import { Switch, Route } from 'react-router'
+import { Switch, Route, Redirect } from 'react-router'
+import cookie from 'cookie'
+import Login from './components/Login'
 import Home from './containers/Home'
-import About from './components/About'
 import Car from './containers/Car'
 import Dashboard from './containers/Dashboard'
-import Import from './containers/Import'
+
+
+const checkAuth = () => {
+    const cookies = cookie.parse(document.cookie);
+    console.log(cookies['loggedIn']);
+    return cookies['loggedIn'] ? true : false;
+};
+
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+    return (
+        <Route {...rest} render={props => checkAuth() ? (
+            <Component {...props} />
+        ) : (
+                <Redirect to="/login" />
+            )}
+        />
+    )
+}
 
 const Router = () => {
     return (
         <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/car/:id" component={Car} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/import" component={Import} />
+            <Route path="/login" component={Login} />
+            <ProtectedRoute exact path="/" component={Home} />
+            <ProtectedRoute path="/dashboard" component={Dashboard} />
+            <ProtectedRoute path="/car/:id" component={Car} />
         </Switch>
     );
 };
 
-export default Router;
+export default Router
