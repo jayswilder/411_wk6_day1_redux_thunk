@@ -28,7 +28,7 @@ const Router = () => {
     return (
         <Switch>
             <Route path="/login" component={Login} />
-            <ProtectedRoute exact path="/" component={Home} />
+            <Route exact path="/" component={Home} />
             <ProtectedRoute path="/dashboard" component={Dashboard} />
             <ProtectedRoute path="/car/:id" component={Car} />
         </Switch>

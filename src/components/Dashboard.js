@@ -30,7 +30,7 @@ const Dashboard = (props) => {
                 </TableHead>
                 <TableBody>
                     {props.cars.map((car, idx) => (
-                        <TableRow key={car.id}>
+                        <TableRow key={idx}>
                             <TableCell><Link to={`/car/${car.id}`}>{car["name"]}</Link></TableCell>
                             <TableCell>{car["description"]}</TableCell>
                             <TableCell>{car["hours"]}</TableCell>

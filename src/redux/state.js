@@ -78,5 +78,6 @@ export default {
          "latitude": 30.08334,
          "longitude": -97.84263
       }
-   ]
+   ],
+   makes: []
 };
