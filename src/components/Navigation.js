@@ -10,21 +10,19 @@ import BusinessIcon from '@material-ui/icons/Business'
 import { Link } from 'react-router-dom'
 
 const Navigation = () => {
+
     const checkAuth = () => {
-        const cookies = cookie.parse(document.cookie);
+        const cookies = cookie.parse(document.cookie.value);
         console.log(cookies['loggedIn']);
         return cookies['loggedIn'] ? true : false;
     };
 
-    const [anchorEl, setAnchorEl] = useState(null);
+    const logout = () => {
+        document.cookie = "loggedIn=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+        window.location.reload()
+    }
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
 
     return (
         <AppBar position="relative">

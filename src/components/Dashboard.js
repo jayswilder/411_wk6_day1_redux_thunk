@@ -6,15 +6,31 @@ import {
     TableCell,
     TableHead,
     TableRow,
+    Chip
 } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
+import FaceIcon from '@material-ui/icons/Face'
 import AddCar from '../containers/AddCar'
 import { Link } from 'react-router-dom'
 
 const Dashboard = (props) => {
+
+    const logout = () => {
+        document.cookie = "loggedIn=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+        window.location.reload()
+    }
+
     return (
         <Container maxWidth="lg" className="car-container">
-            <h4>Welcome,</h4>
+            <h4>Welcome!</h4>
+            <Chip
+                icon={<FaceIcon />}
+                label="Logout"
+                clickable
+                color="primary"
+                variant="outlined"
+                onClick={logout}
+            />
             <div className="flex-container">
                 <AddCar carTotal={props.cars.length} />
             </div>
